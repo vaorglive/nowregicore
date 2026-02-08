@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import { motion } from "framer-motion"
 import { Loader2 } from "lucide-react"
 
 export default function Page() {
@@ -14,12 +13,7 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-background to-primary">
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center gap-6"
-      >
+      <div className="flex flex-col items-center gap-6 animate-fade-in">
         <Loader2 className="h-10 w-10 animate-spin text-muted-foreground" style={{ animationDuration: "2s" }} />
 
         <p className="text-lg font-medium tracking-tight text-foreground">
@@ -32,7 +26,7 @@ export default function Page() {
         >
           Click here if not redirected
         </a>
-      </motion.div>
+      </div>
     </main>
   )
 }
